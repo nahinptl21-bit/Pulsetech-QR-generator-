@@ -58,7 +58,7 @@ export const QRCodeStudio: React.FC<QRCodeStudioProps> = ({
   const [url, setUrl] = useState(initialPayload || 'https://omnicode.local');
 
   // Text state
-  const [rawText, setRawText] = useState('Welcome to OmniCode Zero-3rd-Party Generator');
+  const [rawText, setRawText] = useState('Welcome to OmniCode Studio');
 
   // WiFi state
   const [wifiSsid, setWifiSsid] = useState('Office_WiFi_5G');
@@ -117,8 +117,8 @@ export const QRCodeStudio: React.FC<QRCodeStudioProps> = ({
   const [selectedLogo, setSelectedLogo] = useState<string>('');
   const [logoSizePercent, setLogoSizePercent] = useState<number>(18);
 
-  // Banner State
-  const [bannerPosition, setBannerPosition] = useState<'none' | 'bottom' | 'top'>('bottom');
+  // Banner State (default: none, clean pure QR)
+  const [bannerPosition, setBannerPosition] = useState<'none' | 'bottom' | 'top'>('none');
   const [bannerText, setBannerText] = useState('SCAN ME');
   const [bannerSubtext, setBannerSubtext] = useState('Instant Mobile Access');
   const [bannerBgColor, setBannerBgColor] = useState('#0f172a');
@@ -939,10 +939,10 @@ export const QRCodeStudio: React.FC<QRCodeStudioProps> = ({
         <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 text-center">
           <div className="flex items-center justify-between mb-4">
             <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
-              Live Real-Time Preview
+              Live Preview
             </span>
-            <span className="text-xs px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded-full font-medium">
-              Zero 3rd-Party SVG
+            <span className="text-xs px-2 py-0.5 bg-slate-100 text-slate-600 rounded-full font-medium">
+              Vector SVG
             </span>
           </div>
 

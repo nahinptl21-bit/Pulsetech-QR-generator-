@@ -13,7 +13,6 @@ import { ScannerStudio } from './components/scanner/ScannerStudio';
 import { SavedStudio } from './components/saved/SavedStudio';
 import { getSavedItems } from './lib/storage';
 import { SheetItem } from './lib/label-sheet';
-import { ShieldCheck, Sparkles, Lock, Cpu, Globe2 } from 'lucide-react';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<AppTab>('qr');
@@ -69,38 +68,7 @@ export default function App() {
 
       {/* Main Content Viewport */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-        {/* Banner Pill - Zero 3rd Party Guarantee */}
-        <div className="mb-6 p-3 sm:p-4 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-xl shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3 border border-slate-800 print:hidden">
-          <div className="flex items-center gap-3">
-            <div className="p-2 rounded-lg bg-blue-500/20 text-blue-400 border border-blue-500/30">
-              <Cpu className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-bold text-white tracking-wide">
-                  100% Client-Side Engine
-                </span>
-                <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold">
-                  Air-Gapped & Private
-                </span>
-              </div>
-              <p className="text-xs text-slate-400">
-                Zero external APIs, zero tracking, zero cloud dependencies. All QR matrices, barcode bars, and cryptographic IDs are synthesized locally.
-              </p>
-            </div>
-          </div>
 
-          <div className="flex items-center gap-4 text-xs text-slate-400 sm:border-l sm:border-slate-800 sm:pl-4">
-            <div className="flex items-center gap-1.5">
-              <Lock className="w-3.5 h-3.5 text-emerald-400" />
-              <span>Full Offline Support</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
-              <span>Zero 3rd Party</span>
-            </div>
-          </div>
-        </div>
 
         {/* Studio Content by Tab */}
         {activeTab === 'qr' && (

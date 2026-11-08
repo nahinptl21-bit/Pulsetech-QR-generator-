@@ -1,6 +1,6 @@
 {
   "name": "OmniCode Studio - Zero 3rd Party QR & Barcode Generator",
-  "description": "100% client-side, zero 3rd-party QR code and barcode generator with rich details, unique ID generation suite, and printable label sheets.",
+  "description": "Professional QR code and barcode generator with rich details, unique ID generation suite, and printable label sheets.",
   "requestFramePermissions": ["camera"],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

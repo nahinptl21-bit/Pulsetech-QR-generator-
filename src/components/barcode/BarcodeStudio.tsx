@@ -494,8 +494,8 @@ export const BarcodeStudio: React.FC<BarcodeStudioProps> = ({
               </span>
             </div>
             <div>
-              <span className="font-semibold text-slate-700">Engine: </span>
-              Pure Client SVG
+              <span className="font-semibold text-slate-700">Format: </span>
+              Vector SVG
             </div>
           </div>
 
