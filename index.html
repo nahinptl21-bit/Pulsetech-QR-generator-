@@ -54,7 +54,33 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <noscript>
+      <div style="font-family:system-ui,sans-serif; text-align:center; padding:40px; color:#1e293b;">
+        <h2>JavaScript Required</h2>
+        <p>Please enable JavaScript in your browser to run OmniCode Studio.</p>
+      </div>
+    </noscript>
+    <div id="root">
+      <div id="unbuilt-fallback" style="display:none; font-family:system-ui,sans-serif; text-align:center; padding:50px 20px; color:#1e293b; max-width:540px; margin:40px auto; border:1px solid #e2e8f0; border-radius:12px; background:#f8fafc; box-shadow:0 4px 6px -1px rgba(0,0,0,0.1);">
+        <h2 style="font-size:20px; font-weight:700; margin-bottom:8px; color:#0f172a;">Deployment Build Required</h2>
+        <p style="font-size:14px; color:#64748b; line-height:1.5; margin-bottom:16px;">
+          If you uploaded this project directly to Netlify or static hosting, please note that Vite/React requires a compiled build.
+        </p>
+        <div style="background:#ffffff; border:1px solid #cbd5e1; border-radius:8px; padding:12px; font-family:monospace; font-size:13px; color:#0f172a; text-align:left; margin-bottom:16px;">
+          1. Run: <strong>npm run build</strong><br/>
+          2. Upload the <strong>dist</strong> folder to Netlify (or use the included <code>netlify.toml</code> via Git).
+        </div>
+      </div>
+    </div>
+    <script>
+      setTimeout(function() {
+        var r = document.getElementById('root');
+        var f = document.getElementById('unbuilt-fallback');
+        if (r && (!r.childNodes.length || (r.childNodes.length === 1 && r.childNodes[0].id === 'unbuilt-fallback')) && f) {
+          f.style.display = 'block';
+        }
+      }, 3500);
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
