@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OmniCode Studio - Zero 3rd Party QR & Barcode Generator</title>
+    <meta name="description" content="100% client-side, zero 3rd-party QR code and barcode generator with rich details, unique ID generation suite, and printable label sheets." />
+    <meta property="og:title" content="OmniCode Studio - Zero 3rd Party QR & Barcode Generator" />
+    <meta property="og:description" content="100% client-side, zero 3rd-party QR code and barcode generator with rich details, unique ID generation suite, and printable label sheets." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      (function() {
+        try {
+          var origFetch = window.fetch;
+          if (origFetch) {
+            var activeFetch = origFetch;
+            Object.defineProperty(window, 'fetch', {
+              get: function() { return activeFetch; },
+              set: function(val) { activeFetch = val; },
+              configurable: true,
+              enumerable: true
+            });
+          }
+        } catch (e) {}
+
+        window.addEventListener('error', function(e) {
+          var msg = (e.message || '') + (e.error && e.error.message ? ' ' + e.error.message : '');
+          var fn = e.filename || '';
+          if (
+            fn.indexOf('chrome-extension://') !== -1 ||
+            fn.indexOf('moz-extension://') !== -1 ||
+            msg.indexOf('Cannot set property fetch') !== -1 ||
+            msg.indexOf('which has only a getter') !== -1
+          ) {
+            e.preventDefault();
+            if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+            return true;
+          }
+        }, true);
+
+        window.addEventListener('unhandledrejection', function(e) {
+          var msg = (e.reason && (e.reason.message || e.reason.stack)) || '';
+          if (
+            msg.indexOf('Cannot set property fetch') !== -1 ||
+            msg.indexOf('which has only a getter') !== -1 ||
+            msg.indexOf('chrome-extension://') !== -1
+          ) {
+            e.preventDefault();
+            if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+          }
+        });
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
